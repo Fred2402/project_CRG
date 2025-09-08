@@ -1,0 +1,73 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Fond blanc pour une meilleure lisibilité */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    padding-bottom: 50px; /* Hauteur du footer */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la hauteur calculée */
+}
+form {
+    background: #d2232a; /* Rouge Croix Rouge */
+    padding: 10px;
+    border-radius: 10px; /* Coins arrondis */
+    width: 300px; /* Largeur appropriée pour le formulaire */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments dans le formulaire */
+}
+
+h2 {
+    color: white; /* Texte blanc pour contraster avec le fond rouge */
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%; /* Assure que le titre est centré */
+}
+
+label {
+    color: white; /* Labels blancs pour une bonne visibilité */
+    display: block;
+    margin-bottom: 5px;
+    width: 100%; /* Assure que les labels sont alignés */
+}
+
+input[type="text"], input[type="email"],input[type="password"],input[type="date"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: white; /* Bouton blanc pour contraste */
+    color: #d2232a; /* Texte rouge pour maintenir la cohérence */
+    border: 2px solid white; /* Bordure blanche */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #b51f2a; /* Changement de couleur au survol */
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #d2232a; /* Fond rouge pour le pied de page */
+    color: white;
+}

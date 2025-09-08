@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.welcome-profile {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-details h1 {
+    color: #d2232a; /* Rouge Croix Rouge */
+}
+
+.user-details p {
+    color: #333;
+    margin: 10px 0;
+}
+
+.user-details .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #d2232a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.user-details .btn:hover {
+    background: #b71b26;
+}
+
+.statistics, .notifications, .quick-access {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statistics h2, .notifications h2, .quick-access h2 {
+    color: #d2232a;
+}
+
+.stat-grid, .access-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item, .access-item {
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background: #eaeaea;
+    border-radius: 8px;
+}
+
+.access-item {
+    background: #d2232a;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.access-item:hover {
+    background: #b71b26;
+}
+
+.notifications ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notifications li {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

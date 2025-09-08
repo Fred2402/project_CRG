@@ -1,0 +1,103 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff; /* Blanc de base */
+    color: #333;
+}
+
+nav {
+    background: #d2232a; /* Rouge Croix Rouge */
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%; /* Prend toute la largeur */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    position: relative; /* Positionnement relatif dans la barre nav */
+    display: inline-block; /* Assure que le toggle est sur la même ligne */
+    padding: 10px 20px; /* Ajustement pour un meilleur toucher */
+    font-size: 20px; /* Taille du texte ajustée pour visibilité */
+}
+
+ul#menu-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; /* Positionnement absolu pour l'animation */
+    width: 250px; /* Largeur fixe pour le menu déroulant */
+    top: 100%; /* Part du bas du nav */
+    left: 0;
+    background: #d2232a; /* Fond cohérent avec le nav */
+    transform: translateY(-100vh); /* Cache le menu initialement */
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+ul#menu-items.hidden {
+    transform: translateY(0); /* Affiche le menu quand il n'est pas caché */
+}
+
+ul#menu-items li {
+    padding: 10px 0;
+    border-bottom: 1px solid #fff; /* Séparateur entre les éléments */
+}
+
+ul#menu-items li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+
+header {
+    text-align: center;
+    padding: 50px 10px;
+    background: #d2232a;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px; /* Ajuster en fonction de la hauteur de l'en-tête */
+}
+
+.hero-section h2 {
+    color: #d2232a;
+}
+
+button {
+    background: #d2232a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a71d24;
+}
+
+footer {
+    background: #d2232a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+header, main, footer {
+    padding-left: 10px; /* Padding pour éviter le chevauchement sur le texte du menu */
+}

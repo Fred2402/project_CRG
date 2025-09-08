@@ -1,0 +1,69 @@
+
+
+# Cahier des Charges : Gestion des Volontaires de la Croix-Rouge Gabonaise
+
+## 1. Contexte et Objectifs
+
+### Contexte
+Le projet de digitalisation de la Croix-Rouge Gabonaise (SNCRG) vise à améliorer la gestion des volontaires. Ce projet est réalisé en partenariat avec la Fédération Internationale de la Croix-Rouge et du Croissant-Rouge (IFCR).
+
+### Objectifs
+- **Gestion des Volontaires (Volontariat Plus)** : Simplifier la gestion, la planification, l'alerte et l'identification des volontaires de la SN.
+
+## 2. Public Cible
+- **Volontaires de la Croix-Rouge Gabonaise**
+- **Populations locales**
+- **Organisateurs d'événements**
+- **Agents de terrain de la SNCRG**
+
+## 3. Fonctionnalités Principales
+
+### Gestion des Volontaires
+- **Gestion des inscriptions** : Permettre aux volontaires de s'inscrire sans nécessiter un nom d'utilisateur et un mot de passe.
+- **Gestion des formations** : Suivi et organisation des formations pour les volontaires.
+- **Affectation des volontaires** : Assignation des volontaires à des missions spécifiques.
+- **Gestion des événements** : Planification et suivi des événements.
+- **Répertoire des membres** : Liste et informations des membres.
+- **Portail libre-service** : Interface pour que les volontaires gèrent leur profil et leurs activités.
+- **Accès mobile** : Application accessible depuis les appareils mobiles.
+- **Suivi du temps des interventions** : Suivi des heures de bénévolat.
+- **Alertes** : Notifications en cas de catastrophes et autres événements.
+- **Fin d'engagement** : Gestion de la fin de l'engagement des volontaires.
+
+## 4. Plateformes
+- Application web accessible via les navigateurs modernes.
+- Application mobile pour Android et iOS.
+
+## 5. Technologies et Intégrations
+- **Langages de programmation** : Java, JavaScript, PHP, HTML, MySQL.
+- **Frameworks** : À déterminer en fonction des besoins spécifiques (par exemple, React, Laravel).
+- **API et intégrations** : Intégration avec les services et API de AGEOS et autres partenaires.
+
+## 6. Sécurité et Confidentialité
+- **Protection des données** : Chiffrement des données sensibles.
+- **Gestion des accès** : Contrôles d'accès stricts pour les différentes catégories d'utilisateurs.
+- **Conformité** : Respect des régulations locales et internationales sur la protection des données.
+
+## 7. Délais et Budget
+
+### Budget
+- **Conception de la base de données** : 500,000 CFA
+- **Développement logiciel** : 1,000,000 CFA
+- **Licences utilisateur** : 200,000 CFA
+- **Hébergement et services gérés** : 100,000 CFA par an
+- **Maintenance** : 300,000 CFA par an
+- **Gestion et animation de la plateforme** : 400,000 CFA par an
+- **Campagne de communication** : 200,000 CFA
+- **Formation des volontaires** : 200,000 CFA
+
+### Délais (total : 1 an)
+- **Phase de conception** : 2 mois
+- **Apprentissage de Java** : 3 mois
+- **Développement** : 4 mois
+- **Tests et ajustements** : 2 mois
+- **Déploiement** : 1 mois
+- **Formation et lancement** : 1 mois
+
+## 8. Maintenance et Support
+- **Maintenance** : Mise à jour régulière de l'application et correction des bugs.
+- **Support technique** : Assistance technique pour les utilisateurs.
