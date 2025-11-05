@@ -1,28 +1,34 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
-    header("Location: login.html");
+include 'db.php';
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../html/login.html");
     exit();
 }
 
-include 'db.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $training_id = (int)($_POST['training_id'] ?? 0);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $training_id = $conn->real_escape_string($_POST['training_id']);
+    if ($training_id <= 0) {
+        header("Location: admin_add_training.php?error=bad_id");
+        exit();
+    }
 
-    $sql = "UPDATE trainings SET is_validated = TRUE WHERE id = ?";
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare("UPDATE training SET date_completed = CURDATE() WHERE id = ?");
+    if (!$stmt) {
+        header("Location: admin_add_training.php?error=prepare");
+        exit();
+    }
     $stmt->bind_param("i", $training_id);
 
     if ($stmt->execute()) {
-        echo "Formation validée avec succès.";
-        header("Location: admin_dashboard.php");
+        header("Location: admin_add_training.php?validated=1");
         exit();
     } else {
-        echo "Erreur lors de la validation de la formation: " . $conn->error;
+        header("Location: admin_add_training.php?error=sql");
+        exit();
     }
-
-    $stmt->close();
-    $conn->close();
 }
-?>
+header("Location: admin_add_training.php");
+                    

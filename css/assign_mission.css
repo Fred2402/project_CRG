@@ -1,0 +1,49 @@
+/* Aligné sur dashboard.css / admin_dashboard.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+.container { width: 90%; margin: 20px auto; }
+
+h1, h2 { margin: 16px 0; }
+
+.card, form, .table-wrap {
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.08);
+  border: 1px solid #eee;
+}
+
+form { max-width: 600px; }
+label { display:block; margin:10px 0 6px; font-weight: 600; }
+select, input[type="text"], input[type="date"], textarea {
+  width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; outline:none;
+  background:#fff;
+}
+
+button, .btn {
+  display:inline-block; padding:10px 16px; border-radius:8px; border: none;
+  background:#d2232a; color:#fff; font-weight:700; cursor:pointer;
+}
+button:hover, .btn:hover { background:#b51d24; }
+
+.table-wrap { margin-top:18px; overflow:auto; }
+table { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; }
+th, td { padding:10px 12px; border-bottom:1px solid #eee; text-align:left; }
+th { background:#f9f9f9; }
+tr:hover td { background:#fafafa; }
+
+a.link, a {
+  color:#d2232a; text-decoration:none; font-weight:600;
+}
+a.link:hover, a:hover { text-decoration:underline; }
+
+.alert {
+  margin:12px 0; padding:10px 12px; border-radius:8px; border:1px solid #eee;
+}
+.alert.error { background:#fee2e2; border-color:#fecaca; color:#7f1d1d; }
+.alert.success { background:#e9f9ef; border-color:#c7f1d1; color:#065f46; }

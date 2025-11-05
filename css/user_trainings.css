@@ -1,0 +1,27 @@
+/* Cohérent avec css/dashboard.css */
+body {
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  margin:0; padding:0; color:#333;
+}
+.container { width:90%; margin:20px auto; }
+
+h1 { margin:16px 0; }
+
+.card, .table-wrap {
+  background:#fff; padding:16px 20px; border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,.08); border:1px solid #eee;
+}
+
+.table-wrap { overflow:auto; }
+table { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; }
+th, td { padding:10px 12px; border-bottom:1px solid #eee; text-align:left; }
+th { background:#f9f9f9; }
+tr:hover td { background:#fafafa; }
+
+.badge {
+  display:inline-block; padding:2px 8px; border-radius:999px;
+  border:1px solid #e5e7eb; font-size:.85rem;
+}
+.badge.success { background:#e9f9ef; border-color:#c7f1d1; color:#065f46; }
+.badge.muted   { background:#f3f4f6; border-color:#e5e7eb; color:#374151; }

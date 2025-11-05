@@ -2,37 +2,55 @@
 session_start();
 include 'db.php';
 
-// Vérifie si l'utilisateur est connecté et est un administrateur
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.html");
+    header("Location: ../html/login.html");
     exit();
 }
 
-// Récupérer les données du formulaire
-$user_id = $conn->real_escape_string($_POST['user_id']);
-$training_name = $conn->real_escape_string($_POST['training_name']);
-$niveau = $conn->real_escape_string($_POST['niveau']);
-$date_completed = $conn->real_escape_string($_POST['date_completed'] ?? NULL);
+$user_id       = (int)($_POST['user_id'] ?? 0);
+$training_name = trim($_POST['training_name'] ?? '');
+$niveau        = trim($_POST['niveau'] ?? '');
+$description   = trim($_POST['description'] ?? '');
+$status        = ($_POST['status'] ?? 'non') === 'acquis' ? 'acquis' : 'non';
+$date_input    = trim($_POST['date_completed'] ?? ''); // facultatif si acquis
 
-// Préparer et exécuter la requête pour insérer la formation
-$sql = "INSERT INTO training (user_id, training_name, niveau, date_completed) VALUES (?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-
-if ($stmt === false) {
-    die("Erreur de préparation de la requête SQL : " . $conn->error);
+if ($user_id <= 0 || $training_name === '' || $niveau === '') {
+    header("Location: admin_add_training.php?error=invalid_input");
+    exit();
 }
 
-$stmt->bind_param("isss", $user_id, $training_name, $niveau, $date_completed);
+/* Règle: 
+   - status=acquis  => date_completed = (date_input || CURDATE())
+   - status=non     => date_completed = NULL
+*/
+if ($status === 'acquis') {
+    if ($date_input === '') {
+        $sql = "INSERT INTO training (user_id, training_name, niveau, description, date_completed)
+                VALUES (?, ?, ?, ?, CURDATE())";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("isss", $user_id, $training_name, $niveau, $description);
+    } else {
+        $sql = "INSERT INTO training (user_id, training_name, niveau, description, date_completed)
+                VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("issss", $user_id, $training_name, $niveau, $description, $date_input);
+    }
+} else {
+    $sql = "INSERT INTO training (user_id, training_name, niveau, description, date_completed)
+            VALUES (?, ?, ?, ?, NULL)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("isss", $user_id, $training_name, $niveau, $description);
+}
+
+if (!$stmt) {
+    header("Location: admin_add_training.php?error=prepare");
+    exit();
+}
 
 if ($stmt->execute()) {
-    echo "Formation ajoutée avec succès.";
-    // Redirection après ajout
-    header("Location: admin_dashboard.php?success=true");
+    header("Location: admin_add_training.php?created=1");
+    exit();
 } else {
-    echo "Erreur lors de l'ajout de la formation : " . $stmt->error;
+    header("Location: admin_add_training.php?error=sql");
+    exit();
 }
-
-// Fermer la connexion
-$stmt->close();
-$conn->close();
-?>

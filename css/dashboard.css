@@ -101,3 +101,161 @@ body {
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+/* Section header avec bouton à droite */
+
+
+/* Liste des notifications */
+.notif-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* Carte notification */
+.notif.card {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.notif-date {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.notif-message {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1f2937;
+  white-space: pre-wrap;
+}
+
+/* Chip localité / Tous */
+.chip {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f3f4f6;
+  color: #111827;
+}
+.chip-all {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #3730a3;
+}
+
+/* Bouton lien “Consulter les événements” */
+.btn.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 500;
+}
+.btn.link-btn:hover {
+  background: #f9fafb;
+}
+/* Alertes */
+.alert {
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.alert.success { background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; }
+.alert.error   { background:#fee2e2; border:1px solid #fecaca; color:#991b1b; }
+
+/* Conteneur de cartes (missions / événements) */
+.cards-container {
+  display: grid;
+  gap: 12px;
+}
+
+/* Carte générique d’un item (mission/événement) */
+.item-card {
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.05);
+}
+
+.item-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:6px;
+}
+
+.item-title { font-weight:600; color:#111827; }
+.item-meta  { display:flex; align-items:center; gap:6px; }
+
+.badge-date {
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:999px;
+  background:#eef2ff;
+  border:1px solid #c7d2fe;
+  color:#3730a3;
+  font-size:12px;
+}
+.badge-date.muted {
+  background:#f3f4f6;
+  border-color:#e5e7eb;
+  color:#111827;
+}
+.badge-date.sep {
+  background:transparent;
+  border-color:transparent;
+  color:#6b7280;
+}
+
+.item-desc {
+  font-size:14px;
+  line-height:1.5;
+  color:#1f2937;
+  white-space:pre-wrap;
+  margin-top:6px;
+}
+
+.item-actions { margin-top:10px; display:flex; gap:8px; }
+
+/* Boutons */
+.btn.sm {
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+  background:#fff;
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn.sm:hover { background:#f9fafb; }
+
+/* État vide */
+.empty {
+  padding:16px;
+  text-align:center;
+  color:#6b7280;
+  border:1px dashed #e5e7eb;
+  border-radius:12px;
+  background:#fff;
+}

@@ -1,0 +1,213 @@
+/* ================================
+   Thème Croix-Rouge – Events/Missions
+   ================================ */
+:root{
+  --cr-red: #d2232a;
+  --cr-red-dark: #b31d23;
+  --ink: #111827;
+  --ink-2: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --ok: #16a34a;
+  --ok-2:#065f46;
+  --danger:#dc2626;
+  --shadow: 0 8px 24px rgba(17,24,39,0.08);
+}
+
+html,body{ background: var(--bg); }
+
+/* Grille générique pour listes */
+.events-container,
+.cards-container{
+  display:grid;
+  gap:14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px){
+  .events-container,
+  .cards-container{ grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px){
+  .events-container,
+  .cards-container{ grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* Cartes */
+.event-card,
+.item-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.event-card:hover,
+.item-card:hover{
+  transform: translateY(-2px);
+  border-color: #dfe3ea;
+  box-shadow: 0 12px 28px rgba(17,24,39,0.10);
+}
+
+/* En-têtes cartes */
+.event-header,
+.item-header{
+  display:flex;
+  align-items:start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+}
+.event-title,
+.item-title{
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.event-meta,
+.item-meta{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+/* Dates / badges */
+.badge-date{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff5f5;
+  border: 1px solid #ffd2d2;
+  color: var(--cr-red);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.badge-date.muted{
+  background: #f3f4f6;
+  border-color: var(--line);
+  color: var(--ink);
+}
+.badge-date.sep{
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 0;
+}
+
+/* Contenu */
+.event-desc,
+.item-desc{
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  margin-top: 6px;
+}
+
+/* Actions */
+.event-actions,
+.item-actions{
+  margin-top: 12px;
+  display:flex;
+  flex-wrap: wrap;
+  gap:10px;
+}
+
+/* Boutons compacts */
+.btn.sm{
+  appearance:none;
+  border:1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .12s ease, border-color .12s ease, color .12s ease, transform .06s ease;
+}
+.btn.sm:hover{ background:#f9fafb; }
+.btn.sm:active{ transform: translateY(1px); }
+
+/* Variantes d’action (si tu veux) */
+.btn.primary{
+  border-color: var(--cr-red);
+  background: var(--cr-red);
+  color: #fff;
+}
+.btn.primary:hover{ background: var(--cr-red-dark); border-color: var(--cr-red-dark); }
+
+.btn.ghost{
+  border-color: var(--line);
+  background: transparent;
+}
+.btn.ghost:hover{ background: #ffffff; }
+
+.btn.danger{
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #991b1b;
+}
+.btn.danger:hover{
+  background:#fee2e2;
+  border-color:#fca5a5;
+}
+
+/* États vides */
+.empty{
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  color: var(--muted);
+  text-align:center;
+}
+
+/* Alertes (succès / erreur) */
+.alert{
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  border:1px solid transparent;
+}
+.alert.success{
+  background:#ecfdf5;
+  border-color:#a7f3d0;
+  color: var(--ok-2);
+}
+.alert.error{
+  background:#fef2f2;
+  border-color:#fecaca;
+  color:#991b1b;
+}
+
+/* Petits liens utilitaires */
+a.link, .btn.link-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration:none;
+  border:1px solid var(--line);
+  background:#fff;
+  color: var(--ink);
+  font-weight:600;
+}
+a.link:hover, .btn.link-btn:hover{ background:#f9fafb; }
+
+/* Accessibilité focus */
+a:focus, button:focus, .btn:focus{
+  outline: 3px solid rgba(210,35,42, .25);
+  outline-offset: 2px;
+}
+
+/* Petites améliorations responsive */
+@media (max-width: 420px){
+  .event-header, .item-header{ flex-direction: column; align-items: flex-start; }
+  .event-meta, .item-meta{ margin-top: 4px; }
+}

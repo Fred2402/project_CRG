@@ -1,0 +1,46 @@
+/* Respecte le style existant (admin_dashboard.css + profile.css) */
+body { font-family: Arial, sans-serif; background:#f4f4f4; margin:0; padding:0; color:#333; }
+.container { width:90%; margin:20px auto; }
+
+h1, h2 { margin:16px 0; }
+
+.card, form, .table-wrapper {
+  background:#fff; padding:16px 20px; border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,.08); border:1px solid #eee;
+}
+
+form { max-width:720px; }
+label { display:block; margin:10px 0 6px; font-weight:600; }
+input[type="text"], input[type="date"], input[type="email"], select, textarea {
+  width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; outline:none; background:#fff;
+}
+
+.actions, .form-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+.btn, button {
+  display:inline-block; padding:10px 16px; border-radius:8px; border:none;
+  background:#d2232a; color:#fff; font-weight:700; cursor:pointer;
+}
+.btn.secondary { background:#fff; color:#333; border:1px solid #ddd; }
+.btn.danger { background:#b51d24; }
+.btn:hover { filter:brightness(.95); }
+
+.table-wrapper { margin-top:16px; overflow:auto; }
+table { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; }
+th, td { padding:10px 12px; border-bottom:1px solid #eee; text-align:left; }
+th { background:#f9f9f9; }
+tr:hover td { background:#fafafa; }
+
+.badge {
+  display:inline-block; padding:2px 8px; border-radius:999px;
+  border:1px solid #e5e7eb; font-size:.85rem;
+}
+.badge.success { background:#e9f9ef; border-color:#c7f1d1; color:#065f46; }
+.badge.muted   { background:#f3f4f6; border-color:#e5e7eb; color:#374151; }
+
+.alert { margin:12px 0; padding:10px 12px; border-radius:8px; border:1px solid #eee; }
+.alert.error { background:#fee2e2; border-color:#fecaca; color:#7f1d1d; }
+.alert.success { background:#e9f9ef; border-color:#c7f1d1; color:#065f46; }
+
+a { color:#d2232a; text-decoration:none; font-weight:600; }
+a:hover { text-decoration:underline; }

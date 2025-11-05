@@ -1,0 +1,121 @@
+:root{
+  --cr-red:#d2232a;
+  --cr-red-hover:#b31d23;
+  --ink:#111827;
+  --ink-2:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --bg:#f7f8fa;
+  --card:#ffffff;
+  --ok:#16a34a;
+  --ok-2:#065f46;
+  --danger:#dc2626;
+  --shadow:0 8px 24px rgba(17,24,39,.08);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
+a{color:inherit}
+
+/* Layout */
+.container{
+  max-width:1040px; margin:24px auto; padding:0 16px;
+}
+h1{font-size:24px;margin:0 0 12px 0}
+h2{font-size:18px;margin:18px 0 8px 0}
+
+/* Cards */
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  box-shadow:var(--shadow); padding:14px 16px;
+}
+
+/* Forms */
+form{display:block}
+label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+input[type="text"], input[type="date"], textarea, select{
+  width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink);
+}
+textarea{min-height:110px; resize:vertical}
+input:focus, textarea:focus, select:focus{
+  outline:3px solid rgba(210,35,42,.18); border-color:#f2b4b6;
+}
+
+/* Horizontal groups */
+.actions{display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap; margin-top:10px}
+.form-actions{display:flex; gap:8px; margin-top:12px}
+
+/* Buttons */
+.btn{
+  appearance:none; display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:8px 12px; border-radius:10px; border:1px solid var(--line);
+  background:#fff; color:var(--ink); font-weight:600; cursor:pointer; text-decoration:none;
+  transition:background .12s ease, border-color .12s ease, transform .06s ease;
+}
+.btn:hover{background:#f9fafb}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--cr-red); border-color:var(--cr-red); color:#fff}
+.btn.primary:hover{background:var(--cr-red-hover); border-color:var(--cr-red-hover)}
+.btn.ghost{background:transparent}
+.btn.danger{background:#fff1f2; border-color:#fecaca; color:#991b1b}
+.btn.danger:hover{background:#fee2e2}
+.btn.small{padding:6px 10px; font-weight:600}
+
+/* Tables */
+table{width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden}
+thead th{
+  background:#fafafa; color:#374151; font-weight:700; font-size:13px; text-align:left; border-bottom:1px solid var(--line);
+  padding:10px 12px;
+}
+tbody td{
+  border-bottom:1px solid var(--line); padding:10px 12px; font-size:14px; color:var(--ink-2);
+}
+tbody tr:hover{background:#fcfcfd}
+
+/* Grid split (assign/register) */
+.grid{display:grid; gap:12px; grid-template-columns:1fr}
+@media (min-width: 900px){
+  .grid{grid-template-columns:1fr 1fr}
+}
+
+/* Alerts */
+.alert{
+  padding:10px 12px; border-radius:10px; margin:10px 0; font-size:14px; border:1px solid transparent;
+}
+.alert.success{background:#ecfdf5; border-color:#a7f3d0; color:var(--ok-2)}
+.alert.error{background:#fef2f2; border-color:#fecaca; color:#991b1b}
+
+/* Chips / Badges */
+.badge{
+  display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:999px; font-size:12px;
+  background:#f3f4f6; border:1px solid var(--line); color:var(--ink);
+}
+.badge.date{
+  background:#fff5f5; border-color:#ffd2d2; color:var(--cr-red);
+}
+
+/* Muted text */
+.muted{color:var(--muted); font-size:12px}
+
+/* Utilities */
+.stack-8 > * + *{margin-top:8px}
+.stack-12 > * + *{margin-top:12px}
+
+/* Links in tables (actions) */
+.table-actions{display:flex; gap:8px; flex-wrap:wrap}
+.table-actions .btn{border-color:var(--line)}
+
+/* Confirm links */
+a[onclick*="confirm"]{user-select:none}
+
+/* Focus */
+a:focus, button:focus, .btn:focus, input:focus, select:focus, textarea:focus{
+  outline:3px solid rgba(210,35,42,.25);
+  outline-offset:2px;
+}
+
+/* Empty state */
+.empty{
+  background:#fff; border:1px dashed var(--line); color:var(--muted);
+  padding:16px; border-radius:12px; text-align:center;
+}
